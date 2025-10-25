@@ -162,7 +162,8 @@ int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<rclcpp::Node>("commandder");
-    auto conmander = Commander(node);
+    auto commander = Commander(node);
+    commander.goToPoseTarget(0.0, -0.7, 0.4, 3.14, 0.0, 0.0);
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
