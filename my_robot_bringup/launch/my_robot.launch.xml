@@ -2,7 +2,7 @@
     <let name="urdf_path"
          value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro"/><!-- 加载模型的路径-->
     <let name="rivz_config_path"
-         value="$(find-pkg-share my_robot_description)/rviz/urdf_config.rviz"/> <!-- 用来配置rviz的初始界面-->
+         value="$(find-pkg-share my_robot_description)/rviz/arm_config.rviz"/> <!-- 用来配置rviz的初始界面-->
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
