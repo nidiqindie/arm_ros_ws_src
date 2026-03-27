@@ -1,8 +1,8 @@
 <launch>
     <let name="urdf_path"
-         value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro"/><!-- 加载模型的路径-->
+        value="$(find-pkg-share my_robot_description)/urdf/ur3.urdf.xacro" /><!-- 加载模型的路径-->
     <let name="rivz_config_path"
-         value="$(find-pkg-share my_robot_description)/rviz/arm_config.rviz"/> <!-- 用来配置rviz的初始界面-->
+        value="$(find-pkg-share my_robot_bringup)/config/arm_moveit_rviz_config.rviz" /> <!-- 用来配置rviz的初始界面-->
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
@@ -16,8 +16,8 @@
     <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster" />
     <node pkg="controller_manager" exec="spawner" args="gripper_controller" />
     <node pkg="controller_manager" exec="spawner" args="arm_controller" />
-<!-- test -->
-    <include file="$(find-pkg-share my_robot_moveit_config)/launch/move_group.launch.py"/>
+    <!-- test -->
+    <include file="$(find-pkg-share my_arm_moveit_config)/launch/move_group.launch.py" />
 
     <node pkg="rviz2" exec="rviz2" output="screen" 
           args="-d $(var rivz_config_path)"/>

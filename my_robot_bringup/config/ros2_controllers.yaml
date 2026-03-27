@@ -28,7 +28,7 @@ arm_controller:
 gripper_controller:
   ros__parameters:
     joints:
-      - gripper_left_finger_joint
+      - joint_tool_gripper
     command_interfaces:
       - position
     state_interfaces:

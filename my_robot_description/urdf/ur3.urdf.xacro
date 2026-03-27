@@ -189,5 +189,5 @@
         <axis xyz="0 1 0" />
        <limit lower="-3.14" upper="3.14" effort="100" velocity="1" />
     </joint>
-
+    <xacro:include filename="ur3.ros2_control.xacro" />
 </robot>
