@@ -19,5 +19,8 @@
     "cmake.sourceDirectory": "/home/lyh/ros2_ws1/src/my_robot_bringup",
     "files.associations": {
         "functional": "cpp"
-    }
+    },
+    "ROS2.distro": "jazzy",
+    "Codegeex.RepoIndex": true,
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true
 }

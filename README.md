@@ -18,3 +18,10 @@ ament_export_dependencies(rosidl_default_runtime)
 ros2 topic pub -1 /pose_command my_robot_interfaces/msg/PoseCommand "{x: 0.0, y: -0.7, z: 0.2, roll: 2, pitch: 0.0, yaw: 0.0, cartesian_path: true}"
 在使用卡笛尔路径规划时，可以使用坐标x: 0.0, y: -0.7, z: 0.2, roll: 3.14, pitch: 0.0, yaw: 0.0为原始坐标
 				x: 0.0, y: -0.7, z: 0.5, roll: 3.14, pitch: 0.0, yaw: 0.0来展示卡笛尔路径
+				
+				
+运行命令（在arm_ros_ws_src）
+cd ..(已经在了就不用了)
+colcon build
+source install/setup.zsh或者setup.bash
+ros2 run或者launch启动

@@ -1,18 +1,29 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>my_robot_description</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="pope@todo.todo">pope</maintainer>
-  <license>TODO: License declaration</license>
+  <name>my_robot_description</name>  <!-- 注意：修改包名，避免与官方 urdf 包冲突 -->
+  <version>1.0.0</version>
+  <description>
+    <p>URDF Description package for custom robot</p>
+    <p>This package contains configuration data, 3D models and launch files for the robot</p>
+  </description>
+  <maintainer email="lyh@todo.todo">lyh</maintainer>  <!-- 替换为实际维护者信息 -->
+  <license>BSD</license>
 
+  <!-- 构建工具依赖（ROS 2 用 ament_cmake 替代 catkin） -->
   <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <!-- 编译/运行依赖（替换 ROS 1 包为 ROS 2 对应包） -->
+  <!-- <depend>launch</depend>  ROS 2 中 roslaunch 替换为 launch 包 -->
+  <depend>robot_state_publisher</depend>  <!-- ROS 2 保留此包，功能一致 -->
+  <depend>rviz2</depend>  <!-- ROS 2 中 rviz 更名为 rviz2 -->
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <!-- <depend>gazebo_ros_pkgs</depend>  ROS 2 中 gazebo 相关依赖整合为此包 -->
+  <depend>urdf</depend>  <!-- 依赖 ROS 2 官方 urdf 解析包 -->
+  <depend>xacro</depend>  <!-- 若使用 xacro，需添加此依赖 -->
 
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
-
+  <!-- 导出构建类型（ROS 2 必须声明） -->
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type>ament_cmake</build_type> 
   </export>
-</package>
+</package>  
