@@ -13,21 +13,24 @@
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['joint1']}</param>
                 </state_interface>
-                <state_interface name="velocity"/>
             </joint>
             <joint name="joint2">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['joint2']}</param>
                 </state_interface>
-                <state_interface name="velocity"/>
             </joint>
             <joint name="joint3">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['joint3']}</param>
                 </state_interface>
-                <state_interface name="velocity"/>
+            </joint>
+            <joint name="joint_tool_gripper">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['joint_tool_gripper']}</param>
+                </state_interface>
             </joint>
 
         </ros2_control>
