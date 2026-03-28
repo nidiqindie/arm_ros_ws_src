@@ -10,9 +10,18 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
+
+
 add_executable(test_moveit src/test_moveit.cpp)
 ament_target_dependencies(test_moveit rclcpp moveit_ros_planning_interface)
-install(TARGETS 
+
+add_executable(test_moveit_oop src/command_temple.cpp)
+ament_target_dependencies(test_moveit_oop rclcpp moveit_ros_planning_interface)
+
+
+
+install(TARGETS
+  test_moveit_oop
   test_moveit
   DESTINATION lib/${PROJECT_NAME}/)
 ament_package()
