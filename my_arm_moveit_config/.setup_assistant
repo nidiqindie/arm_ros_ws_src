@@ -7,17 +7,4 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: 1
     author_email: 1@ss.com
-    generated_timestamp: 1774616249
-  control_xacro:
-    command:
-      - position
-    state:
-      - position
-  modified_urdf:
-    xacros:
-      - control_xacro
-  control_xacro:
-    command:
-      - position
-    state:
-      - position
+    generated_timestamp: 1774679934
