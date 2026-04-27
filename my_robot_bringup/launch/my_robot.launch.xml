@@ -2,15 +2,16 @@
     <let name="urdf_path"
         value="$(find-pkg-share my_robot_description)/urdf/ur3.urdf.xacro" /><!-- 加载模型的路径-->
     <let name="rivz_config_path"
-        value="$(find-pkg-share my_robot_bringup)/config/arm_moveit_rviz_config.rviz" /> <!-- 用来配置rviz的初始界面-->
+        value="$(find-pkg-share my_robot_bringup)/config/arm_moveit_rviz_config.rviz" /> <!--
+    用来配置rviz的初始界面-->
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
-               value="$(command 'xacro $(var urdf_path)')"/>
+            value="$(command 'xacro $(var urdf_path)')" />
     </node>
 
-    <node pkg="controller_manager" exec="ros2_control_node" >
-        <param from="$(find-pkg-share my_robot_bringup)/config/ros2_controllers.yaml"/>
+    <node pkg="controller_manager" exec="ros2_control_node">
+        <param from="$(find-pkg-share my_robot_bringup)/config/ros2_controllers.yaml" />
     </node>
 
     <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster" />
@@ -19,6 +20,6 @@
     <!-- test -->
     <include file="$(find-pkg-share my_arm_moveit_config)/launch/move_group.launch.py" />
 
-    <node pkg="rviz2" exec="rviz2" output="screen" 
-          args="-d $(var rivz_config_path)"/>
+    <node pkg="rviz2" exec="rviz2" output="screen"
+        args="-d $(var rivz_config_path)" />
 </launch>
